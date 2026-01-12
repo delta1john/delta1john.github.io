@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store | Links</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#f3f4f6',
+                            DEFAULT: '#111827',
+                            accent: '#4f46e5'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease;
+        }
+
+        .glass-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            background-color: #e5e5f7;
+            background-image:  radial-gradient(#4f46e5 0.5px, transparent 0.5px), radial-gradient(#4f46e5 0.5px, #e5e5f7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased min-h-screen relative">
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 z-0 bg-pattern pointer-events-none"></div>
+    <div class="fixed top-0 left-0 w-full h-64 bg-gradient-to-b from-white/80 to-transparent z-0 pointer-events-none"></div>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-md mx-auto min-h-screen flex flex-col items-center pt-12 pb-8 px-4">
+
+        <!-- Share Button (Top Right) -->
+        <button onclick="sharePage()" class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:text-brand-accent transition-colors z-20" aria-label="Share">
+            <i class="fa-solid fa-share-nodes"></i>
+        </button>
+
+        <!-- Profile Section -->
+        <div class="text-center w-full animate-[fadeInUp_0.5s_ease-out_forwards]">
+            <div class="relative inline-block">
+                <!-- Profile Image -->
+                <div class="w-28 h-28 rounded-full p-1 bg-white shadow-lg mx-auto overflow-hidden border-2 border-brand-accent/20">
+                    <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=200&auto=format&fit=crop" 
+                         alt="Brand Logo" 
+                         class="w-full h-full object-cover rounded-full">
+                </div>
+                <!-- Verified Badge -->
+                <div class="absolute bottom-1 right-1 bg-blue-500 text-white text-xs w-6 h-6 flex items-center justify-center rounded-full border-2 border-white" title="Verified">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+
+            <h1 class="mt-4 text-2xl font-bold text-gray-900 tracking-tight">Luxe Apparel Co.</h1>
+            <p class="text-gray-600 text-sm mt-1 max-w-[80%] mx-auto">Sustainable fashion for the modern era. Worldwide shipping 🌍</p>
+            
+            <!-- Social Icons Row -->
+            <div class="flex justify-center gap-4 mt-5 mb-8">
+                <a href="#" class="text-2xl text-gray-400 hover:text-pink-600 transition-colors transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-black transition-colors transform hover:scale-110"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-red-600 transition-colors transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Links Container -->
+        <div class="w-full space-y-4">
+
+            <!-- Featured Product Card (Special Styling) -->
+            <a href="#" class="block group animate-[fadeInUp_0.5s_ease-out_0.1s_forwards] opacity-0">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm z-10">BEST SELLER</span>
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop" 
+                             alt="Featured Product" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                            <div class="text-white">
+                                <h3 class="font-bold text-lg">Autumn Collection Drop</h3>
+                                <p class="text-xs opacity-90">Shop the new season essentials</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-brand-accent text-white text-center font-semibold text-sm flex justify-between items-center px-6">
+                        <span>Shop Now</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Standard Link Button 1 -->
+            <a href="#" class="glass-btn flex items-center p-1 rounded-xl group animate-[fadeInUp_0.5s_ease-out_0.2s_forwards] opacity-0 hover:border-brand-accent/50 border border-transparent">
+                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-shop"></i>
+                </div>
+                <div class="flex-1 px-4">
+                    <h3 class="font-semibold text-gray-800">Visit Our Website</h3>
+                </div>
+                <div class="pr-4 text-gray-300 group-hover:text-gray-500">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Standard Link Button 2 -->
+            <a href="#" class="glass-btn flex items-center p-1 rounded-xl group animate-[fadeInUp_0.5s_ease-out_0.3s_forwards] opacity-0 hover:border-brand-accent/50 border border-transparent">
+                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+                <div class="flex-1 px-4">
+                    <h3 class="font-semibold text-gray-800">Clearance Sale</h3>
+                    <p class="text-xs text-red-500 font-medium">Up to 50% Off</p>
+                </div>
+                <div class="pr-4 text-gray-300 group-hover:text-gray-500">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Accordion / Dropdown Link -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 animate-[fadeInUp_0.5s_ease-out_0.4s_forwards] opacity-0 overflow-hidden">
+                <button onclick="toggleAccordion('acc1')" class="w-full flex items-center p-1 text-left">
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <div class="flex-1 px-4">
+                        <h3 class="font-semibold text-gray-800">Shop by Category</h3>
+                    </div>
+                    <div class="pr-4 text-gray-400">
+                        <i id="icon-acc1" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div id="content-acc1" class="hidden bg-gray-50 border-t border-gray-100">
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-accent border-b border-gray-100/50">Men's Fashion</a>
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-accent border-b border-gray-100/50">Women's Fashion</a>
+                    <a href="#" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand-accent">Accessories</a>
+                </div>
+            </div>
+
+            <!-- Standard Link Button 3 -->
+            <a href="#" class="glass-btn flex items-center p-1 rounded-xl group animate-[fadeInUp_0.5s_ease-out_0.5s_forwards] opacity-0 hover:border-brand-accent/50 border border-transparent">
+                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="flex-1 px-4">
+                    <h3 class="font-semibold text-gray-800">Customer Support</h3>
+                </div>
+                <div class="pr-4 text-gray-300 group-hover:text-gray-500">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="w-full mt-8 p-6 bg-white rounded-2xl shadow-lg border border-gray-100 text-center animate-[fadeInUp_0.5s_ease-out_0.6s_forwards] opacity-0">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3 text-brand-accent">
+                <i class="fa-regular fa-envelope text-xl"></i>
+            </div>
+            <h3 class="font-bold text-gray-900">Join the Club</h3>
+            <p class="text-xs text-gray-500 mt-1 mb-4">Get 10% off your first order when you sign up.</p>
+            <form onsubmit="handleSubscribe(event)" class="flex flex-col gap-2">
+                <input type="email" placeholder="Your email address" required class="w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 text-sm">
+                <button type="submit" class="w-full bg-gray-900 text-white font-medium py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 mb-6 text-center animate-[fadeInUp_0.5s_ease-out_0.7s_forwards] opacity-0">
+            <div class="text-2xl font-bold text-gray-300 mb-2">LUXE.</div>
+            <p class="text-xs text-gray-400">© 2024 Luxe Apparel Co. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full shadow-xl z-50 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none flex items-center gap-2">
+        <i class="fa-solid fa-check-circle text-green-400"></i>
+        <span id="toast-message">Action successful</span>
+    </div>
+
+    <script>
+        // Share Functionality
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Luxe Apparel Co.',
+                    text: 'Check out my links and store!',
+                    url: window.location.href,
+                })
+                .catch((error) => console.log('Error sharing', error));
+            } else {
+                // Fallback for desktop: Copy URL
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                showToast('Link copied to clipboard!');
+            }
+        }
+
+        // Accordion Toggle
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Mock Subscribe
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Subscribed!';
+            btn.classList.add('bg-green-600', 'hover:bg-green-700');
+            btn.classList.remove('bg-gray-900', 'hover:bg-gray-800');
+            
+            showToast('Thanks for subscribing!');
+            
+            setTimeout(() => {
+                e.target.reset();
+                btn.innerText = originalText;
+                btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                btn.classList.add('bg-gray-900', 'hover:bg-gray-800');
+            }, 3000);
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            
+            toast.classList.remove('opacity-0', 'translate-y-10');
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-10');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
